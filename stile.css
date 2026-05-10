@@ -1,0 +1,238 @@
+/* ============================================================
+   STILE.CSS — Foglio di stile comune per tutto il sito
+   Cambia colori, font e dimensioni qui per aggiornare
+   l'aspetto di TUTTE le pagine contemporaneamente.
+   ============================================================ */
+
+/* --- Importazione font da Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap');
+
+/* --- Variabili di colore e font (modificale a piacere) --- */
+:root {
+  --colore-primario:    #1a4b8c;   /* Blu scuro — navbar e titoli */
+  --colore-secondario:  #e8f0fb;   /* Azzurro chiaro — sfondo navbar */
+  --colore-accento:     #f0a500;   /* Giallo ambra — link attivo */
+  --colore-testo:       #2c2c2c;   /* Grigio scuro — testo del corpo */
+  --colore-sfondo:      #f7f7f4;   /* Bianco caldo — sfondo pagina */
+  --colore-bordo:       #ccd6e8;   /* Grigio azzurrato — bordi */
+  --font-titoli:        'Merriweather', serif;
+  --font-corpo:         'Source Sans 3', sans-serif;
+  --larghezza-max:      900px;     /* Larghezza massima del contenuto */
+}
+
+/* --- Reset di base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Corpo della pagina --- */
+body {
+  font-family: var(--font-corpo);
+  font-size: 1rem;
+  color: var(--colore-testo);
+  background-color: var(--colore-sfondo);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+nav {
+  background-color: var(--colore-primario);
+  padding: 0 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  max-width: var(--larghezza-max);
+  margin: 0 auto;
+}
+
+nav ul li a {
+  display: block;
+  padding: 1rem 1.25rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-corpo);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-bottom-color: var(--colore-accento);
+}
+
+/* Classe da aggiungere manualmente al link della pagina corrente */
+nav ul li a.attivo {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-bottom-color: var(--colore-accento);
+  color: var(--colore-accento);
+}
+
+/* ============================================================
+   INTESTAZIONE DELLA PAGINA (header)
+   ============================================================ */
+header {
+  background-color: var(--colore-secondario);
+  border-bottom: 2px solid var(--colore-bordo);
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-family: var(--font-titoli);
+  font-size: 2rem;
+  color: var(--colore-primario);
+  margin-bottom: 0.4rem;
+}
+
+header p.sottotitolo {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ============================================================
+   CONTENUTO PRINCIPALE (main)
+   ============================================================ */
+main {
+  max-width: var(--larghezza-max);
+  margin: 2.5rem auto;
+  padding: 0 2rem;
+}
+
+/* --- Titoli interni --- */
+main h2 {
+  font-family: var(--font-titoli);
+  font-size: 1.5rem;
+  color: var(--colore-primario);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--colore-bordo);
+}
+
+main h3 {
+  font-family: var(--font-titoli);
+  font-size: 1.15rem;
+  color: var(--colore-primario);
+  margin: 1.5rem 0 0.4rem;
+}
+
+/* --- Paragrafi --- */
+main p {
+  margin-bottom: 1rem;
+}
+
+/* --- Elenchi puntati e numerati --- */
+main ul,
+main ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+main li {
+  margin-bottom: 0.4rem;
+}
+
+/* --- Evidenziazione testo importante --- */
+main strong {
+  color: var(--colore-primario);
+}
+
+/* --- Citazioni o box informativi --- */
+main blockquote {
+  border-left: 4px solid var(--colore-accento);
+  background-color: var(--colore-secondario);
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+}
+
+/* --- Tabelle --- */
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+main th,
+main td {
+  border: 1px solid var(--colore-bordo);
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+}
+
+main th {
+  background-color: var(--colore-primario);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+main tr:nth-child(even) {
+  background-color: var(--colore-secondario);
+}
+
+/* --- Immagini --- */
+main img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* ============================================================
+   PIÈ DI PAGINA (footer)
+   ============================================================ */
+footer {
+  background-color: var(--colore-primario);
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  padding: 1.25rem 2rem;
+  font-size: 0.85rem;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: var(--colore-accento);
+  text-decoration: none;
+}
+
+/* ============================================================
+   RESPONSIVE — schermi piccoli (tablet e smartphone)
+   ============================================================ */
+@media (max-width: 640px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav ul li a {
+    padding: 0.75rem 1rem;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.attivo {
+    border-bottom: none;
+    border-left-color: var(--colore-accento);
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 0 1rem;
+  }
+}
